@@ -1,0 +1,95 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: GroupBuy_development
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+  mongodb_logger:
+    database: GroupBuy_development             # required (the only required setting)
+    capsize: <%= 250.megabytes %>   # default: 250MB
+    host: localhost                # default: localhost
+    port: 27017                    # default: 27017
+    replica_set: true              # default: false - Adds retries for ConnectionFailure during voting for replica set master
+    write_options:                 # default: {w: 0, wtimeout: 200} - write options for inserts (w - wait for insert to propagate to "w" numbers of nodes)
+      w: 0
+      wtimeout: 200
+    disable_file_logging: false    # default: false - disable logging into filesystem (only in MongoDB)
+    collection: development_log          # default: Rails.env + "_log" - name of MongoDB collection
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: GroupBuy_test
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+  mongodb_logger:
+    database: GroupBuy_test             # required (the only required setting)
+    capsize: <%= 250.megabytes %>   # default: 250MB
+    host: localhost                # default: localhost
+    port: 27017                    # default: 27017
+    replica_set: true              # default: false - Adds retries for ConnectionFailure during voting for replica set master
+    write_options:                 # default: {w: 0, wtimeout: 200} - write options for inserts (w - wait for insert to propagate to "w" numbers of nodes)
+      w: 0
+      wtimeout: 200
+    disable_file_logging: false    # default: false - disable logging into filesystem (only in MongoDB)
+    collection: test_log          # default: Rails.env + "_log" - name of MongoDB collection
+
+
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: GroupBuy_staging
+  pool: 5
+  username: root
+  password: L0it3r@roUnd
+  socket: /var/run/mysqld/mysqld.sock
+  mongodb_logger:
+    database: GroupBuy_staging             # required (the only required setting)
+    capsize: <%= 250.megabytes %>   # default: 250MB
+    host: localhost                # default: localhost
+    port: 27017                    # default: 27017
+    replica_set: true              # default: false - Adds retries for ConnectionFailure during voting for replica set master
+    write_options:                 # default: {w: 0, wtimeout: 200} - write options for inserts (w - wait for insert to propagate to "w" numbers of nodes)
+      w: 0
+      wtimeout: 200
+    disable_file_logging: false    # default: false - disable logging into filesystem (only in MongoDB)
+    collection: staging_log          # default: Rails.env + "_log" - name of MongoDB collection
+
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: GroupBuy_production
+  pool: 5
+  username: root
+  password: L0it3r@roUnd
+  socket: /var/run/mysqld/mysqld.sock
+  mongodb_logger:
+    database: GroupBuy_production             # required (the only required setting)
+    capsize: <%= 250.megabytes %>   # default: 250MB
+    host: localhost                # default: localhost
+    port: 27017                    # default: 27017
+    replica_set: true              # default: false - Adds retries for ConnectionFailure during voting for replica set master
+    write_options:                 # default: {w: 0, wtimeout: 200} - write options for inserts (w - wait for insert to propagate to "w" numbers of nodes)
+      w: 0
+      wtimeout: 200
+    disable_file_logging: false    # default: false - disable logging into filesystem (only in MongoDB)
+    collection: production_log          # default: Rails.env + "_log" - name of MongoDB collection
+
