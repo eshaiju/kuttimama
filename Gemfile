@@ -31,6 +31,7 @@ gem "devise", "~> 3.2"
 gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'kaminari'
 gem "paperclip", "~> 3.5.1"
+gem 'mysql2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
