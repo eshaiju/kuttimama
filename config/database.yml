@@ -11,20 +11,24 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: kuttimama
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
   pool: 5
-  username: adminz14sGsK
-  password: QYwVgG9DJP19
-  socket: /var/lib/openshift/5367a134500446e0ec0000e8/mysql//socket/mysql.sock
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+  socket: <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
   
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: kuttimama
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
   pool: 5
-  username: adminz14sGsK
-  password: QYwVgG9DJP19
-  socket: /var/lib/openshift/5367a134500446e0ec0000e8/mysql//socket/mysql.sock
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+  socket: <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
   #socket: /var/run/mysqld/mysqld.sock
   
