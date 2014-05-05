@@ -15,7 +15,7 @@ development:
   pool: 5
   username: adminz14sGsK
   password: QYwVgG9DJP19
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /var/lib/openshift/5367a134500446e0ec0000e8/mysql//socket/mysql.sock
   
 
 production:
@@ -25,5 +25,6 @@ production:
   pool: 5
   username: adminz14sGsK
   password: QYwVgG9DJP19
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /var/lib/openshift/5367a134500446e0ec0000e8/mysql//socket/mysql.sock
+  #socket: /var/run/mysqld/mysqld.sock
   
