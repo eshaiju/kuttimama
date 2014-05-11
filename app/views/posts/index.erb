@@ -19,7 +19,7 @@
 					 for post in @posts do 
 					  %>
 					<li>
-						<img src="<%= image_tag post.image.url(:medium) %>">
+						<%= image_tag post.image.url(:medium) %>
 						<div class="action">
 							<a href="<%= image_tag post.image.url %>"><i class="fa fa-cloud-download"></i></a>
 							<i class="fa fa-copy"></i>
