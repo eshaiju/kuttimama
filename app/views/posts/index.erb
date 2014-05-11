@@ -19,9 +19,9 @@
 					 for post in @posts do 
 					  %>
 					<li>
-						<%= image_tag post.image.url(:medium) %>
+						<img src="<%= post.image.url(:medium) %>">
 						<div class="action">
-							<a href="<%= image_tag post.image.url %>"><i class="fa fa-cloud-download"></i></a>
+							<a href="<%= post.image.url %>"><i class="fa fa-cloud-download"></i></a>
 							<i class="fa fa-copy"></i>
 							<i class="fa fa-facebook"></i>
 						</div>
