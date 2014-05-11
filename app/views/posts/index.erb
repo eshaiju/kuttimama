@@ -15,13 +15,13 @@
 			<div class="grid-block">
 				<ul>
 					<%
-					if @post
+					if @posts
 					 for post in @posts do 
 					  %>
 					<li>
-						<img src="<%= post.image %>">
+						<img src="<%= image_tag post.image.url(:medium) %>">
 						<div class="action">
-							<a href="<%= post.image %>"><i class="fa fa-cloud-download"></i></a>
+							<a href="<%= image_tag post.image.url %>"><i class="fa fa-cloud-download"></i></a>
 							<i class="fa fa-copy"></i>
 							<i class="fa fa-facebook"></i>
 						</div>
