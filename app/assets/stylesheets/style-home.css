@@ -59,7 +59,7 @@ html {
 
 }
 .search-inner{
-	width: 66%;
+	width: 63%;
 	padding: 10px !important;
 	background: url(bubble.svg) no-repeat;
   	background-size: 32px 22px;
@@ -112,6 +112,9 @@ html {
 	text-align: center;
 	display: none;
 	transition: all 2s ease-in-out;
+}
+.grid-block ul li .action a{
+	color: #FFF;
 }
 .grid-block ul li:hover .action{
 	display: block;

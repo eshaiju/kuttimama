@@ -1,4 +1,4 @@
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">	
 	<div class="content-area">
 		<div class="top-nav">
 			<h2 class="site-name-text">കുട്ടിമാമ</h2>
@@ -14,44 +14,31 @@
 			</div>
 			<div class="grid-block">
 				<ul>
+					<%
+					if @post
+					 for post in @posts do 
+					  %>
 					<li>
-						<img src="http://mip-framework.com/wp-content/themes/fb-malayalam-comedy-comments-6615.jpg">
+						<img src="<%= post.image %>">
 						<div class="action">
-							<i class="fa fa-cloud-download"></i>
+							<a href="<%= post.image %>"><i class="fa fa-cloud-download"></i></a>
 							<i class="fa fa-copy"></i>
 							<i class="fa fa-facebook"></i>
 						</div>
-						<div class="title">Kuttimama njan njettimama </div>
+						<div class="title"><%= post.title %></div>
 					</li>
-
-					<li>
-						<img src="http://www.tintumon.in/wp-content/uploads/2013/09/Facebook-Malayalam-Photo-Comment18.jpg">
-						<div class="action">
-							<i class="fa fa-cloud-download"></i>
-							<i class="fa fa-copy"></i>
-							<i class="fa fa-facebook"></i>
-						</div>
-						<div class="title">Kuttimama njan njettimama </div>
-					</li>
+					<% 
+					end
+					else
+					 %>
+					 <div class="color-grey">No posts available<div>
+					 <% end %>
 
 				</ul>
 				<br class="clearfix">
 			</div>
 			<div class="bottom-pagination">
-				<div class="pagination">
-					<span class="page current">
-						1
-					</span>
-					<span class="page">
-						<a href="" rel="next">2</a>
-					</span>
-					<span class="next">
-						<a href="" rel="next">Next ›</a>
-					</span>
-					<span class="last">
-						<a href="">Last »</a>
-					</span>
-				</div>
+				 <%= paginate @posts %>
 			</div>
 		</div>
 
@@ -65,3 +52,4 @@
 		</div>
 
 	</div>
+	
