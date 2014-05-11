@@ -1,0 +1,124 @@
+/*@import url(http://fonts.googleapis.com/css?family=Nova+Square);*/
+/*@import url(http://fonts.googleapis.com/css?family=Noto+Sans);*/
+body{
+	font-family: arial,sans-serif;
+}
+hr{
+	margin-top:2px;
+	color: #E1E1E8;
+}
+.align-center{
+	text-align: center;
+}
+/*-------General--------*/
+.color-blue{
+	color:#2988E7;
+}
+.color-grey{
+	color:#B0B3A6;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right !important;
+}
+.no-border{
+	border: none  !important;
+}
+.no-right-border{
+	border-right: none !important;
+}
+.no-left-border{
+	border-left: none !important;
+}
+.no-top-border{
+	border-top: none !important;
+}
+.no-bottom-border{
+	border-bottom: none !important;
+}
+.hidden{
+	display: none;
+}
+
+ /*button styles*/
+ button,.btn{
+ 	border:1px solid;
+ 	border-radius:1px; 	
+ 	font-size: 1em;
+ 	color: #FFF;
+ 	cursor: pointer;
+ 	text-decoration: none;
+ 	outline: none;
+
+ }
+ button:active,.btn:active{
+ 	background: #95A5A6;
+ 	border-color: #95A5A6;
+ }
+ .btn-medium{
+ 	padding: 6px;
+ 	font-size: 1em;
+ }
+ .btn-add{
+ 	background: #2ECC71;
+ 	border-color: #2ECC71;
+ }
+ .btn-cancel{
+ 	background: #95A5A6;
+ 	border-color: #95A5A6;
+ }
+  /*textbox styles*/
+  input[type=text],.input-text{
+  	border:1px solid #D7D8D1;
+  	padding: 5px;
+  	outline: none;
+  }
+  input[type=text]:focus,.input-text:focus{
+   	border-color: #84BBE8;
+  }
+  textarea{
+  	width:95%;
+  	font-family: arial,sans-serif;
+  }  
+  select{
+  	border:1px solid #D7D8D1;
+  	padding: 5px;
+  	outline: none;
+  }
+  .clearfix{
+  	clear: both;
+  	padding: 0;
+  	margin: 0;
+  	font-size: 0;
+  }
+  /*pagination*/
+  .pagination{
+  	border:1px solid #D7D8D1;
+  	padding: 5px 0 5px 0;
+  	color: #FFF;
+  }
+  .pagination span{
+  	/*background: #CFCFCF;*/
+  	border-right: 1px solid #FFF;
+ 	 padding: 6px 10px 6px 10px;
+ 	 background: #22A7F0;
+  }
+  .pagination span:hover{
+  	background: #2ECC71;
+  }
+  .pagination span.current{
+  	background: #E74C3C;
+  }
+    .pagination span a{
+    	text-decoration: none;
+    	color: #FFF;
+    }
+    /*hover colors*/
+    .hover-red:hover{
+    	color: #CD1F30;
+    }
+    .hover-blue:hover{
+    	color: #22A7F0;;
+    }
