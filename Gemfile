@@ -32,6 +32,7 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'kaminari'
 gem "paperclip", "~> 3.5.1"
 gem 'mysql2'
+gem "paperclip-dropbox", ">= 1.1.7"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
