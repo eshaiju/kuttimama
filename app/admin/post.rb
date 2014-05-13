@@ -38,7 +38,9 @@ ActiveAdmin.register Post do
           end
           row :movie
           row :category
-          row :tag
+          row :tags do |post|
+            post.tags.map{|t| t.title}.join(', ')
+          end
         end
       end
     end
@@ -52,14 +54,14 @@ ActiveAdmin.register Post do
       f.input :image
       f.input :movie, :as => :select,:collection => Movie.all 
       f.input :category, :as => :select,:collection => Category.all
-      f.input :tag,:as => :select,:collection => Tag.all
+      f.input :tags,:as => :select,:collection => Tag.all , multiple: true, :input_html => { :class => "chosen-input" }
     end
     f.actions
   end
 
    controller do
     def permitted_params
-      params.permit post: [:title,:movie_id,:category_id,:tag_id,:image,:status]
+      params.permit post: [:title,:movie_id,:category_id,:image,:status,tag_ids:[]]
     end
   end
 end
