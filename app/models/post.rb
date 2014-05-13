@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :posts_tags
   has_many :tags , :through => :posts_tags
   
-  has_attached_file :imag ,
+  has_attached_file :image ,
   									:storage => :dropbox,
   									:processors => [:watermark],
   										:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
