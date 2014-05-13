@@ -3,10 +3,10 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :tag
   has_attached_file :image, 
-  									:storage => :dropbox,
+  								#	:storage => :dropbox,
   									:processors => [:watermark],
     								:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-    								:path => "/:class/:attachment/:id_partition/:style/:filename",
+    								#:path => "/:class/:attachment/:id_partition/:style/:filename",
 									  :styles => { :medium => "300x170>", :thumb => "100x100>" , :small => "50x50",
 									  	:medium => {
 	                      :geometry => '300x170>',
@@ -32,5 +32,9 @@ class Post < ActiveRecord::Base
 									  	},
 									  :default_url => ActionController::Base.helpers.asset_path("user_default.png", type: :image)
 
+	searchable do
+    text :title
+    integer :category_id    
+  end
   
 end
