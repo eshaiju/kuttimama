@@ -27,5 +27,9 @@ ActiveAdmin.register Tag do
     def permitted_params
       params.permit tag: [:title, :status]
     end
+
+     def tags_list
+       render :json => Tag.all.collect {|tag| {:id => tag.id,:name => "#{tag.title}" }}
+     end
   end
 end
