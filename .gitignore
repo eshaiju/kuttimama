@@ -15,3 +15,4 @@ rerun.txt
 pickle-email-*.html
 .idea/*
 solr/data
+config/database.yml
