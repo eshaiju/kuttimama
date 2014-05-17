@@ -13,6 +13,12 @@ ActiveAdmin.register Post do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+
+
+  action_item only:[:show] do
+   link_to "New post", new_admin_post_path
+  end
+
    index do
     selectable_column
     column :title do |post|

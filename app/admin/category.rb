@@ -13,6 +13,9 @@ ActiveAdmin.register Category do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  action_item only:[:show,:edit] do
+   link_to "New category", new_admin_category_path
+  end
   controller do
     def permitted_params
       params.permit category: [:name, :status]

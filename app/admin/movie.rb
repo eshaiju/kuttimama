@@ -13,6 +13,9 @@ ActiveAdmin.register Movie do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  action_item only:[:show,:edit] do
+   link_to "New movie", new_admin_movie_path
+  end
   form do |f|
     f.inputs "Movie Details" do
       f.semantic_errors *f.object.errors.keys

@@ -13,6 +13,9 @@ ActiveAdmin.register Tag do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  action_item only:[:show,:edit] do
+   link_to "New tag", new_admin_tag_path
+  end
 
   form do |f|
     f.inputs "Tags" do
