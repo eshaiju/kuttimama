@@ -15,34 +15,8 @@
 			</form>
 
 			</div>
-			<div class="grid-block">
-				<ul>
-					<%
-					if @posts
-					 for post in @posts do 
-					  %>
-					<li>
-						<img src="<%= post.image.url(:medium) %>">
-						<div class="action">
-							<a href="<%= post.image.url %>" download><i class="fa fa-cloud-download"></i></a>
-							<i class="fa fa-copy"></i>
-							<i class="fa fa-facebook"></i>
-						</div>
-						<div class="title"><%= post.title %></div>
-					</li>
-					<% 
-					end
-					else
-					 %>
-					 <div class="color-grey">No posts available<div>
-					 <% end %>
-
-				</ul>
-				<br class="clearfix">
-			</div>
-			<div class="bottom-pagination">
-				 <%= paginate @posts %>
-			</div>
+			<div id="posts" ><%= render :partial => 'posts' %></div>
+		
 		</div>
 
 		<div class="footer">

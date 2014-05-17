@@ -12,6 +12,10 @@ class PostsController < ApplicationController
 		else
 			@posts = Post.page(params[:page]).per(9)
 		end
+		respond_to do |format|
+	      format.html
+	      format.js
+	    end
 	end
 
 	def home

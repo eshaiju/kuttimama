@@ -8,7 +8,3 @@ $ ->
   $('.chosen-input').chosen
     allow_single_deselect: true
     no_results_text: 'No results matched'
-
-  $("input").tagsinput typeahead:
-    source: (query) ->
-      $.getJSON "citynames.json"
