@@ -6,11 +6,12 @@
 		<div class="container">		
 			<div class="search-top">
 				<form action="<%= posts_path %>" >
-				<div><input type="text" class="search-inner" name="q" placeholder="Search Dialogs"> 
-					<select class="search-inner-category">
+				<div><input type="text" class="search-inner" name="q" placeholder="Search Dialogs" value="<%=params[:q]%>"> 
+					<!-- <select class="search-inner-category">
 						<option>Categories</option>
-					</select>	
-					<input type="submit" class="btn btn-medium btn-add search-inner-btn" value=" search ">
+					</select>	 -->
+					<%= select_tag "catagory", options_from_collection_for_select(@catagories, "id", "name",:selected =>params[:catagory]),:include_blank =>true, :class=>"search-inner-category" %>
+		<input type="submit" class="btn btn-medium btn-add search-inner-btn" value=" search ">
 				</div>
 			</form>
 
@@ -20,11 +21,11 @@
 		</div>
 
 		<div class="footer">
-			<a href="kuttimama.com" class="hover-red">&copy; Kuttimama.com</a>
+			<a href="#" class="hover-red">&copy; Kuttimama.com</a>
 			<div class="pull-right">
-				<a href="kuttimama.com" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-facebook"></i></a>
-				<a href="kuttimama.com" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-twitter"></i></a>
-				<a href="kuttimama.com" class="hover-red" style="font-size:1.5em;"><i class="fa fa-google-plus"></i></a>
+				<a href="https://www.facebook.com/Kuttimamaofficial?ref=br_tf" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-facebook"></i></a>
+				<a href="#" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-twitter"></i></a>
+				<a href="#" class="hover-red" style="font-size:1.5em;"><i class="fa fa-google-plus"></i></a>
 			</div>
 		</div>
 
