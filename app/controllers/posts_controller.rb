@@ -7,23 +7,23 @@ class PostsController < ApplicationController
 		# else 
 		# 	@posts = Post.page(params[:page]).per(9)
 		# end
-		if params[:q]
-			p @posts = Post.where("title like '%#{params[:q]}%'")
+		unless params[:q].blank?
+			@posts = Post.where("title like '%#{params[:q]}%'")
 		end
-		if params[:category]
-			p @posts = Post.all if @posts.blank?
-			p @posts = @posts.where(:catagory_id =>params[:catagory])
+		unless params[:category].blank?
+			@posts = Post.all if @posts.blank?
+			@posts = @posts.where(:category_id =>params[:category])
 		end
 		if params[:q].blank? and params[:category].blank?
-			p @posts = Post.all 
+			@posts = Post.all 
 		end
-		@posts = @posts.page(params[:page]).per(9)
+		@posts = @posts.order("id desc").page(params[:page]).per(9)
 
 		@catagories = Category.all
 		respond_to do |format|
-	      format.html
-	      format.js
-	    end
+	    format.html
+	    format.js
+	  end
 
 	end
 

@@ -10,7 +10,7 @@
 					<!-- <select class="search-inner-category">
 						<option>Categories</option>
 					</select>	 -->
-					<%= select_tag "catagory", options_from_collection_for_select(@catagories, "id", "name",:selected =>params[:catagory]),:include_blank =>true, :class=>"search-inner-category" %>
+					<%= select_tag "category", options_from_collection_for_select(@catagories, "id", "name",:selected =>params[:category]),:include_blank =>true, :class=>"search-inner-category" %>
 		<input type="submit" class="btn btn-medium btn-add search-inner-btn" value=" search ">
 				</div>
 			</form>
