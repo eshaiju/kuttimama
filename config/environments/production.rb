@@ -79,4 +79,9 @@ Kuttimama::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.assets.precompile += ['active_admin.css']
+    config.paperclip_defaults = {
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+    :path => "/:class/:attachment/:id_partition/:style/:filename"
+  }
 end
