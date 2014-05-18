@@ -29,7 +29,9 @@ ActiveAdmin.register Post do
     end
     column :movie
     column :category
-    column :tag
+    column :tags do |post|
+            post.tags.map{|t| t.title}.join(', ')
+          end
     actions
   end
 
@@ -58,8 +60,8 @@ ActiveAdmin.register Post do
       f.semantic_errors *f.object.errors.keys
       f.input :title, :as => :string
       f.input :image
-      f.input :movie, :as => :select,:collection => Movie.all 
-      f.input :category, :as => :select,:collection => Category.all
+      f.input :movie, :as => :select,:collection => Movie.all , :input_html => { :class => "chosen-input" }
+      f.input :category, :as => :select,:collection => Category.all, :input_html => { :class => "chosen-input" }
       f.input :tags,:as => :select,:collection => Tag.all , multiple: true, :input_html => { :class => "chosen-input" }
     end
     f.actions
