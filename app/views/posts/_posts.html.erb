@@ -4,6 +4,7 @@
 		if @posts
 		 for post in @posts do 
 		  %>
+		  <% cache post do%>
 		<li>
 			<img src="<%= post.image.url(:medium) %>">
 			<div class="action">
@@ -13,6 +14,7 @@
 			</div>
 			<div class="title"><%= post.title %></div>
 		</li>
+		<% end %>
 		<% 
 		end
 		else
@@ -24,5 +26,5 @@
 	<br class="clearfix">
 </div>
 <div class="bottom-pagination">
-	 <%= paginate @posts %>
+	 <%= paginate @posts , :remote => true %>
 </div>
