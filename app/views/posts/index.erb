@@ -1,33 +1,10 @@
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">	
-	<div class="content-area">
-		<div class="top-nav">
-			<h2 class="site-name-text">കുട്ടിമാമ</h2>
-		</div>
-		<div class="container">		
-			<div class="search-top">
-				<form action="<%= posts_path %>" >
-				<div><input type="text" class="search-inner" name="q" placeholder="Search Dialogs" value="<%=params[:q]%>"> 
-					<!-- <select class="search-inner-category">
-						<option>Categories</option>
-					</select>	 -->
-					<%= select_tag "category", options_from_collection_for_select(@catagories, "id", "name",:selected =>params[:category]),:include_blank =>true, :class=>"search-inner-category" %>
-		<input type="submit" class="btn btn-medium btn-add search-inner-btn" value=" search ">
-				</div>
-			</form>
 
-			</div>
-			<div id="posts" ><%= render :partial => 'posts' %></div>
-		
-		</div>
-
-		<div class="footer">
-			<a href="#" class="hover-red">&copy; Kuttimama.com</a>
-			<div class="pull-right">
-				<a href="https://www.facebook.com/Kuttimamaofficial?ref=br_tf" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-facebook"></i></a>
-				<a href="#" class="hover-blue" style="font-size:1.5em;"><i class="fa fa-twitter"></i></a>
-				<a href="#" class="hover-red" style="font-size:1.5em;"><i class="fa fa-google-plus"></i></a>
-			</div>
-		</div>
-
+<div class="content-area">
+	<%= render :partial => 'navbar' %>
+	<div class="container">		
+		<%= render :partial => 'search_bar' %>
+		<div id="posts" ><%= render :partial => 'posts' %></div>
 	</div>
+	<%= render :partial => 'footer' %>
+</div>
 	
