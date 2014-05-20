@@ -13,4 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-typeahead
 //= require_tree .
+var ready;
+ready = function() {
+var mySource = $.ajax({url : "/title_list.json", async: false});
+    $('.myElement').typeahead({
+        source: mySource.responseJSON
+    });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

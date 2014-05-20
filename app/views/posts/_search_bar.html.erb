@@ -1,6 +1,6 @@
 <div class="search-top">
 	<form action="<%= posts_path %>" >
-		<div><input type="text" class="search-inner" name="q" placeholder="Search Dialogs" value="<%=params[:q]%>"> 
+		<div><input type="text" class="search-inner myElement" name="q" placeholder="search your favourite malayalam dialogues" value="<%=params[:q]%>" autocomplete="off"> 
 			<%= select_tag "category", options_from_collection_for_select(@catagories, "id", "name",:selected =>params[:category]),:include_blank =>true, :class=>"search-inner-category" %>
 		<input type="submit" class="btn btn-medium btn-add search-inner-btn" value=" search ">
 		</div>

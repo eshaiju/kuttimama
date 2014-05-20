@@ -30,4 +30,10 @@ class PostsController < ApplicationController
 	def home
 	end
 
+	def title_list
+	  list = Post.all.collect {|post| {:id => post.title,:name => "#{post.title}" }}
+      # Tag.all.collect{|tag| list << {:id => tag.title,:name => "#{tag.title}"}}
+      render :json => list
+	end
+
 end
