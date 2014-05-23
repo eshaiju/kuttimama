@@ -1,1 +1,3 @@
+echo " Restoring data stated"
 mv ${OPENSHIFT_DATA_DIR}/data/ ${OPENSHIFT_REPO_DIR}/public/system/ 
+echo " Restoring data finished"
