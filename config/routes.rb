@@ -1,5 +1,10 @@
 Kuttimama::Application.routes.draw do
   
+  namespace :api do
+      namespace :v1  do
+        resources :posts
+      end
+    end
   get 'admin/tags/tags_list' => 'admin/tags#tags_list', :as => 'admin_tags_tags_list'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
