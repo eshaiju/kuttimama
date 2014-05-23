@@ -134,9 +134,9 @@ html {
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
 	left: 0;
-	padding:2%;
+	padding:0%;
 	position: absolute;
-	width: 96%;
+	width: 100%;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;

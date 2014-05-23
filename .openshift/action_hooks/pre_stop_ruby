@@ -1,3 +1,3 @@
-echo " Backup data stated"
+echo "Data Backup  stated"
 mv ${OPENSHIFT_REPO_DIR}/public/system/ ${OPENSHIFT_DATA_DIR}/data
-echo " Backup data finished"
+echo "Data Backup finished"
