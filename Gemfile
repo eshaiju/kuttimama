@@ -34,8 +34,8 @@ gem "paperclip", "~> 3.5.1"
 gem 'mysql2'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "chosen-rails"
-gem 'sunspot_rails'
-gem 'sunspot_solr' 
+# gem 'sunspot_rails'
+# gem 'sunspot_solr' 
 # gem 'mini_magick', '~> 3.7.0'
 
 
