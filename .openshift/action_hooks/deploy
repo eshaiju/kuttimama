@@ -1,4 +1,4 @@
-STORED_SYSTEMS="${OPENSHIFT_DATA_DIR}/data" LIVE_SYSTEMS="${OPENSHIFT_REPO_DIR}/public/system"
+STORED_SYSTEMS="${OPENSHIFT_DATA_DIR}/data/photos" LIVE_SYSTEMS="${OPENSHIFT_REPO_DIR}/public/system"
 
 # Ensure our stored assets directory exists
 if [ ! -d "${STORED_SYSTEMS}" ]; then
@@ -12,4 +12,4 @@ echo " WARNING: Assets included in git repository, not using stored assets"
 else
 echo " Restoring stored assets"
 ln -sf "${STORED_SYSTEMS}" "${LIVE_SYSTEMS}"
-fi
+fi 
