@@ -1,1 +1,1 @@
-mv ${OPENSHIFT_DATA_DIR}/backup/ ${OPENSHIFT_REPO_DIR}/public/system/ 
+mv ${OPENSHIFT_DATA_DIR}/data/ ${OPENSHIFT_REPO_DIR}/public/system/ 
