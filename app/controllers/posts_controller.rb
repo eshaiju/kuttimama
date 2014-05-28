@@ -14,7 +14,13 @@ class PostsController < ApplicationController
 			@posts = Post.all if @posts.blank?
 			@posts = @posts.where(:category_id =>params[:category])
 		end
-		if params[:q].blank? and params[:category].blank?
+    unless params[:tag_id].blank?
+    	@posts = Post.all if @posts.blank?
+    	tag = Tag.find_by_id(params[:tag_id])
+    	@posts = tag.posts
+			# @posts = @posts.where(:category_id =>params[:category])
+    end
+		if params[:q].blank? and params[:category].blank? and params[:tag_id].blank?
 			@posts = Post.all 
 		end
 		@posts = @posts.order("id desc").page(params[:page]).per(9)
@@ -25,6 +31,14 @@ class PostsController < ApplicationController
 	    format.js
 	  end
 
+	end
+
+	def show
+		@post = Post.find_by_id(params[:id])
+		@catagories = Category.all
+		@tags = @post.tags
+		@post.category_id
+		@related_posts = Post.where("category_id = ?  and id != ? or movie_id = ?  and id != ?", @post.category_id,@post.id, @post.movie_id,@post.id ).sample(5)
 	end
 
 	def home

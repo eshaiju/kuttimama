@@ -1,0 +1,43 @@
+<script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+<div class="details-block">
+	<ul>
+		<% cache @post do%>
+			<li>
+				<img src="<%= @post.image.url() %>">
+				<div class="action">
+					<a href="<%= @post.image.url %>" download><i class="fa fa-cloud-download"></i></a>
+					<i class="fa fa-copy"></i>
+					<i class="fa fa-facebook"></i>
+				</div>
+			</li>
+		<% end %>
+    <div class="post-details" >
+    	<p><b>Dialog :</b> <%= @post.title %></p>
+    	<p><b>Movie :</b> <%= link_to @post.movie.name  if @post.movie.present?  %></p>
+    	<p><b>Category :</b> <%= link_to @post.category.name,posts_path(:category_id =>@post.category_id) %></p>
+    	<p><b>Tags :</b>
+    	<%@tags.each do |tag|%>
+    	 <%= link_to tag.title,posts_path(:tag_id =>tag.id)  %>
+    	<% end %>
+    	</p>
+    	<p>
+					<%= like_button(1504012106485142,:layout =>:box_count,"show-faces" => true , :share => true, :width => '50px')  %>
+					<%= pinit_button  %>
+					<%= tweet_button %>
+					<%= google_plus_button %>
+			</p>
+    </div> 
+	</ul>
+	<br class="clearfix">
+</div>
+<br class="clearfix">
+<div class = "related-post-block">
+  <h5>Related Photos</h5>
+  <ul>
+		  <% @related_posts.each do |post| %>
+		  	<li>
+		  		<%= link_to image_tag(post.image.url(:thumb)),post_path(post) %>
+			  </li>
+		  <% end %>
+	</ul>
+</div>

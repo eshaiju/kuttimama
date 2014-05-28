@@ -6,7 +6,7 @@
 		  %>
 		  <% cache post do%>
 		<li>
-			<img src="<%= post.image.url(:medium) %>">
+		    <%= link_to image_tag(post.image.url(:medium)),post_path(post) %>
 			<div class="action">
 				<a href="<%= post.image.url %>" download><i class="fa fa-cloud-download"></i></a>
 				<i class="fa fa-copy"></i>

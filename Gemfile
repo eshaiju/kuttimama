@@ -32,8 +32,8 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'kaminari'
 gem "paperclip", "~> 3.5.1"
 gem 'mysql2'
-gem "paperclip-dropbox", ">= 1.1.7"
 gem "chosen-rails"
+gem "social-buttons", '~> 0.3'
 # gem 'sunspot_rails'
 # gem 'sunspot_solr' 
 # gem 'mini_magick', '~> 3.7.0'
