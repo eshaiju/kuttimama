@@ -1,4 +1,4 @@
-<script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+<script type="text/javascript" src="http://api.chromeactions.com/3dlikebox.js"></script>
 <div class="details-block">
 	<ul>
 		<% cache @post do%>
@@ -21,11 +21,12 @@
     	<% end %>
     	</p>
     	<p>
-					<%= like_button(1504012106485142,:layout =>:box_count,"show-faces" => true , :share => true, :width => '50px')  %>
-					<%= pinit_button  %>
-					<%= tweet_button %>
-					<%= google_plus_button %>
-			</p>
+    		<%= render_shareable :buttons=> [ 'facebook','twitter','google_plus'] %>
+		</p>
+		<div class="likebox3d"
+  data-url="Kuttimamaofficial"
+  style="width:300px;height:200px;">
+</div>
     </div> 
 	</ul>
 	<br class="clearfix">
