@@ -34,6 +34,7 @@ gem "paperclip", "~> 3.5.1"
 gem 'mysql2'
 gem "chosen-rails"
 gem 'shareable', '~> 0.0.3'
+gem 'jquery-turbolinks'
 # gem 'sunspot_rails'
 # gem 'sunspot_solr' 
 # gem 'mini_magick', '~> 3.7.0'

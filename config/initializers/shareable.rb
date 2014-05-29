@@ -17,7 +17,7 @@ Shareable.configure do |config|
   ##############
   #google_plus
   ##############
-  config.annotation='bubble'
+  #config.annotation='bubble'
   #config.align=''
   #config.expand_to=''
   #config.callback=''
@@ -58,13 +58,13 @@ Shareable.configure do |config|
   ##############
   #twitter
   ##############
-  config.via='tweetbutton'
+  #config.via='tweetbutton'
   #config.text=''
   #config.related=''
-  config.count='horizontal'
-  config.lang='en'
+  #config.count='horizontal'
+  #config.lang='en'
   #config.counturl=''
   #config.hashtags=''
-  config.size='medium'
+  #config.size='medium'
   #config.dnt=''
 end
