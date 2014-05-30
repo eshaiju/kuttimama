@@ -5,7 +5,7 @@
 			<li>
 				<img src="<%= @post.image.url() %>">
 				<div class="action">
-					<a href="<%= @post.image.url %>" download><i class="fa fa-cloud-download"></i></a>
+					<a href="<%= @post.image.url(:medium) %>" download><i class="fa fa-cloud-download"></i></a>
 					<i class="fa fa-copy"></i>
 					<i class="fa fa-facebook"></i>
 				</div>
@@ -23,7 +23,7 @@
     	<p>
     		<%= render_shareable :buttons=> [ 'facebook','twitter','google_plus'] %>
 		</p>
-<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/Kuttimamaofficial&amp;width=320&amp;height=240&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=1504012106485142" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:240px;" allowtransparency="true"></iframe> 
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/Kuttimamaofficial&amp;width=320&amp;height=240&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=1504012106485142" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:240px;" allowtransparency="true"></iframe> 
     </div> 
 	</ul>
 
