@@ -3,7 +3,7 @@
 	<ul>
 		<% cache @post do%>
 			<li>
-				<img src="<%= @post.image.url() %>">
+				<img src="<%= @post.image.url(:large) %>">
 				<div class="action">
 					<a href="<%= @post.image.url(:medium) %>" download><i class="fa fa-cloud-download"></i></a>
 					<i class="fa fa-copy"></i>

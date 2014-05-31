@@ -7,26 +7,21 @@ class Post < ActiveRecord::Base
   
   has_attached_file :image ,
 		:processors => [:watermark],  										
-	  	:styles => { :medium => "300x170>", :thumb => "100x100>" , :large => "600x250",
+	  	:styles => { :medium => "300x170>", :thumb => "100x100>" , :large => "600x400",
 	  	:medium => {
         :geometry => '300x170>',
         :watermark_path => "#{Rails.root}/public/images/watermark.jpg",
-        :position => 'NorthEast'
-   							 },
-   			:original => {
-        :geometry => '750>',
-        :watermark_path => "#{Rails.root}/public/images/watermark.jpg",
-        :position => 'NorthEast'
+        :position => 'West'
    							 },
    			:thumb => {
         :geometry => '100x100>',
         :watermark_path => "#{Rails.root}/public/images/watermark.jpg",
-        :position => 'NorthEast'
+        :position => 'West'
    							 },
    			:large => {
-        :geometry => '600x250>',
+        :geometry => '600x400>',
         :watermark_path => "#{Rails.root}/public/images/watermark.jpg",
-        :position => 'NorthEast'
+        :position => 'West'
    							 }
 	  	},
 	  :default_url => ActionController::Base.helpers.asset_path("user_default.png", type: :image)
