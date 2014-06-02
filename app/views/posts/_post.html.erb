@@ -14,7 +14,7 @@
     <div class="post-details" >
     	<p><b>Dialog :</b> <%= @post.title %></p>
     	<p><b>Movie :</b> <%= link_to @post.movie.title  if @post.movie.present?  %></p>
-    	<p><b>Category :</b> <%= link_to @post.category.name,posts_path(:category_id =>@post.category_id ) if @post.category_id.present? %></p>
+    	<p><b>Category :</b> <%= link_to @post.category.name,posts_path(:category =>@post.category_id ) if @post.category_id.present? %></p>
     	<p><b>Tags :</b>
     	<%@tags.each do |tag|%>
     	 <%= link_to tag.title,posts_path(:tag_id =>tag.id)  %>
