@@ -11,7 +11,9 @@ ready = function() {
    var tagLists = $.ajax({url : "/tag_list.json", async: false});
    $(".chosen-input").chosen({no_results_text: "Oops, nothing found!"}); 
    $(".e12").select2({tags:tagLists.responseJSON});
-    var select, chosen;
+   if($('#new_post').length >0)
+   {
+      var select, chosen;
     // cache the select element as we'll be using it a few times
     // select = $(".chosen-input");
     select = $(".chosen-input");
@@ -35,6 +37,9 @@ ready = function() {
             select.trigger("chosen:updated");
         }
     });
+
+   }
+  
 };
 
 $(document).ready(ready);
