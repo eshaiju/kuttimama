@@ -62,12 +62,36 @@ ActiveAdmin.register Post do
       f.input :image
       f.input :movie, :as => :select,:collection => Movie.all , :input_html => { :class => "chosen-input" }
       f.input :category, :as => :select,:collection => Category.all, :input_html => { :class => "chosen-input" }
-      f.input :tags,:as => :select,:collection => Tag.all , multiple: true, :input_html => { :class => "chosen-input" }
+      f.input :tags,:as => :string, multiple: true, :input_html => { :class => "e12" , :value =>resource.tags.map{|t| t.title}.join(', ')}
     end
     f.actions
   end
 
-   controller do
+  before_save do
+    if params[:post][:tags].present?
+      tag_titles = params[:post][:tags].split(',')
+      tags = []
+      tag_titles.each do | tag_title|
+         tag = Tag.find_by_title(tag_title)
+        if tag.blank?
+          tag = Tag.create(:title => tag_title )
+        end
+        tags << tag.id
+      end
+    end
+    resource.tag_ids = tags
+
+    if params[:post][:movie_id]
+      movie = Movie.find_by_title(params[:post][:movie_id])
+      if movie.blank?
+        movie = Movie.create(:title => params[:post][:movie_id] )
+      end
+      resource.movie_id = movie.id
+    end
+  end
+
+
+  controller do
     def permitted_params
       params.permit post: [:title,:movie_id,:category_id,:image,:status,tag_ids:[]]
     end

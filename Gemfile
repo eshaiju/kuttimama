@@ -35,6 +35,7 @@ gem 'mysql2'
 gem "chosen-rails"
 gem 'shareable', '~> 0.0.3'
 gem 'jquery-turbolinks'
+gem "select2-rails"
 # gem 'sunspot_rails'
 # gem 'sunspot_solr' 
 # gem 'mini_magick', '~> 3.7.0'

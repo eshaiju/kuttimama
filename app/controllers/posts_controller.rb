@@ -50,4 +50,14 @@ class PostsController < ApplicationController
       render :json => list
 	end
 
+	def tag_list
+		list = Tag.all.collect{|tag| "#{tag.title}"}
+		render :json => list
+	end
+
+	def movie_list
+		list = Movie.all.collect{|movie| "#{movie.title}"}
+		render :json => list
+	end
+
 end
