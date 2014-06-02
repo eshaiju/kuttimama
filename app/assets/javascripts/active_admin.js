@@ -13,6 +13,7 @@ ready = function() {
    $(".e12").select2({tags:tagLists.responseJSON});
     var select, chosen;
     // cache the select element as we'll be using it a few times
+    // select = $(".chosen-input");
     select = $(".chosen-input");
     // init the chosen plugin
     select.chosen();
@@ -29,7 +30,7 @@ ready = function() {
             // add the new option
             select.prepend(option);
             // automatically select it
-            select.find(option).prop('selected', true);
+            // select.find(option).prop('selected', true);
             // trigger the update
             select.trigger("chosen:updated");
         }
