@@ -9,6 +9,7 @@
 var ready;
 ready = function() {
    var tagLists = $.ajax({url : "/tag_list.json", async: false});
+  $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
    $(".chosen-input").chosen({no_results_text: "Oops, nothing found!"}); 
    $(".e12").select2({tags:tagLists.responseJSON});
    if($('.post').length >0)
@@ -32,7 +33,7 @@ ready = function() {
             // add the new option
             select.prepend(option);
             // automatically select it
-            // select.find(option).prop('selected', true);
+             select.find(option).prop('selected', true);
             // trigger the update
             select.trigger("chosen:updated");
         }

@@ -61,7 +61,7 @@ ActiveAdmin.register Post do
       f.input :title, :as => :string
       f.input :image
       f.input :movie, :as => :select,:collection => Movie.all , :input_html => { :class => "chosen-input" }
-      f.input :category, :as => :select,:collection => Category.all, :input_html => { :class => "chosen-input" }
+      f.input :category, :as => :select,:collection => Category.all, :input_html => { :class => "chosen-select" }
       f.input :tags,:as => :string, multiple: true, :input_html => { :class => "e12" , :value =>resource.tags.map{|t| t.title}.join(', ')}
     end
     f.actions
@@ -82,7 +82,10 @@ ActiveAdmin.register Post do
     resource.tag_ids = tags
 
     if params[:post][:movie_id]
-      movie = Movie.find_by_title(params[:post][:movie_id])
+      movie = Movie.find_by_title(params[:post][:movie_id]) 
+      if movie.blank?
+        movie = Movie.find_by_id(params[:post][:movie_id])
+      end
       if movie.blank?
         movie = Movie.create(:title => params[:post][:movie_id] )
       end
