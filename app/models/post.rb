@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  FIELDS_RENDERED = [:id, :title]
+  METHODS_RENDERED = [:image_large_url, :image_medium_url]
+
   belongs_to :movie
   belongs_to :category
   attr_accessor :tags_as_text
@@ -21,5 +24,17 @@ class Post < ActiveRecord::Base
 	  	},
 	  :default_url => ActionController::Base.helpers.asset_path("user_default.png", type: :image)
 
-  
+  def image_large_url
+    image.url(:large)
+  end
+
+  def image_medium_url
+    image.url(:medium)
+  end
+
+  def as_json(options={})
+    super(:methods => Post::METHODS_RENDERED,
+          :only => Post::FIELDS_RENDERED)
+  end
+
 end
