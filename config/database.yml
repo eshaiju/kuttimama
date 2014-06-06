@@ -12,10 +12,11 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: kuttimama_db
+  database: kuttimama_development
   pool: 5
   username: root
-  password: nuevalgo
+  password: eshaiju
+
   
 
 production:
