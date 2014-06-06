@@ -11,12 +11,12 @@ class Api::V1::EditorController < Api::ApiController
     background_color = params[:background_color] || '#ffffff'
     width = params[:width] || 800
     weight = params[:weight] || 800
-    convert_text_to_image text,fond_size,color,width,background_color,@photo,position_x,position_y
+    convert_text_to_image text,fond_size,color,width,weight,background_color,@photo,position_x,position_y
     @photo.destroy
     render :status => :ok,:json =>{:image_path =>"#{HOST_URL}/output.jpg"}
   end
 
-  def convert_text_to_image text,fond_size,color,width,background_color,photo,position_x,position_y
+  def convert_text_to_image text,fond_size,color,width,weight,background_color,photo,position_x,position_y
     title = MagickTitle.say(text,
               :font_size => fond_size,
               :color => color,
@@ -37,5 +37,6 @@ class Api::V1::EditorController < Api::ApiController
       c.geometry "+#{position_x}+#{position_y}" # copy second_image onto first_image from (20, 20)
     end
     result.write 'public/output.jpg'
+    `rm public/#{seccond_image_path}`
   end
 end
