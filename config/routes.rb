@@ -2,7 +2,7 @@ Kuttimama::Application.routes.draw do
   
   namespace :api do
       namespace :v1  do
-        resources :posts
+        resources :posts,:editor
       end
     end
   get 'admin/tags/tags_list' => 'admin/tags#tags_list', :as => 'admin_tags_tags_list'

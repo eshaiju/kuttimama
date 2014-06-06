@@ -84,4 +84,5 @@ Kuttimama::Application.configure do
   #   :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
   #   :path => "/:class/:attachment/:id_partition/:style/:filename"
   # }
+  HOST_URL = "http://kuttimama.com"
 end
