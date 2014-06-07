@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+   before_filter :metatags
   def index		
     # if params['q']
     # 	page = params[:page] || 1

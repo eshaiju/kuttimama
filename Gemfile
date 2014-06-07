@@ -36,8 +36,9 @@ gem "chosen-rails"
 gem 'shareable', '~> 0.0.3'
 gem 'jquery-turbolinks'
 gem "select2-rails"
- gem 'mini_magick', '~> 3.7.0'
- gem 'magick_title', '>= 0.2.0' 
+gem 'meta-tags'
+gem 'mini_magick', '~> 3.7.0'
+gem 'magick_title', '>= 0.2.0' 
 
 
 group :doc do
