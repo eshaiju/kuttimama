@@ -20,6 +20,8 @@ Kuttimama::Application.routes.draw do
    root 'posts#home'
    get 'title_list' => 'posts#title_list'
    get 'tag_list' => 'posts#tag_list'
+   get 'editor/new' => 'editor#new'
+   post 'editor/create' => 'editor#create'
    
    
    resources :posts
