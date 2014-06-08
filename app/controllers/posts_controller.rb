@@ -20,7 +20,11 @@ class PostsController < ApplicationController
       @posts = tag.posts
       # @posts = @posts.where(:category_id =>params[:category])
     end
-    if params[:q].blank? and params[:category].blank? and params[:tag_id].blank?
+    unless params[:movie_id].blank?
+      @posts = Post.all if @posts.blank?
+      @posts = @posts.where(:movie_id =>params[:movie_id])
+    end
+    if params[:q].blank? and params[:category].blank? and params[:tag_id].blank? and  params[:movie_id].blank?
       @posts = Post.all 
     end
     @posts = @posts.order("id desc").page(params[:page]).per(9)
