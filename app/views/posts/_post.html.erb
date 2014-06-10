@@ -2,8 +2,9 @@
 <div class="details-block">
 	<ul>
 		<% cache @post do%>
+		<h1><%= @post.title %></h1>
 			<li>
-				<img src="<%= @post.image.url(:large) %>">
+				<img src="<%= @post.image.url(:large) %>" alt ="<%= @post.title%>" >
 				<div class="action">
 					<a href="<%= @post.image.url(:medium) %>" download><i class="fa fa-cloud-download"></i></a>
 					<i class="fa fa-copy"></i>
@@ -12,7 +13,7 @@
 			</li>
 		<% end %>
     <div class="post-details" >
-    	<p><b>Dialog :</b> <%= @post.title %></p>
+    	
     	<p><b>Movie :</b> <%= link_to @post.movie.title,posts_path(:movie_id =>@post.movie_id )  if @post.movie.present?  %></p>
     	<p><b>Category :</b> <%= link_to @post.category.name,posts_path(:category =>@post.category_id ) if @post.category_id.present? %></p>
     	<p><b>Tags :</b>
@@ -34,7 +35,7 @@
   <ul>
 		  <% @related_posts.each do |post| %>
 		  	<li>
-		  		<%= link_to image_tag(post.image.url(:thumb)),post_path(post) %>
+		  		<%= link_to image_tag(post.image.url(:thumb)),post_path(post.title) %>
 			  </li>
 		  <% end %>
 	</ul>

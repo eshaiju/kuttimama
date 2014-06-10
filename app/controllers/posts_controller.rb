@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_title(params[:id])
     @catagories = Category.all
     @tags = @post.tags
     @post.category_id
