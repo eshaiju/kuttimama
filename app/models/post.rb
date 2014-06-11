@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
   FIELDS_RENDERED = [:id, :title]
   METHODS_RENDERED = [:image_large_url, :image_medium_url]
-
+  validates :image, :attachment_presence => true
+  validates_presence_of :title
   belongs_to :movie
   belongs_to :category
   attr_accessor :tags_as_text
@@ -23,6 +24,8 @@ class Post < ActiveRecord::Base
    							 }
 	  	},
 	  :default_url => ActionController::Base.helpers.asset_path("user_default.png", type: :image)
+  
+
 
   def image_large_url
     image.url(:large)
@@ -35,6 +38,15 @@ class Post < ActiveRecord::Base
   def as_json(options={})
     super(:methods => Post::METHODS_RENDERED,
           :only => Post::FIELDS_RENDERED)
+  end
+
+  before_create :randomize_file_name
+
+  private
+
+  def randomize_file_name
+    extension = File.extname(image_file_name).downcase
+    self.image.instance_write(:file_name, "#{title}#{extension}")
   end
 
 end
