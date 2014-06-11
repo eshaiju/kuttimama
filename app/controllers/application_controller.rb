@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   def metatags
     @page_title      ||= "Kuttimama || Malayalam movie fb comments"
     @page_description ||= "latest malayalam movie comments for facebook"
-    @page_keywords    ||= "malayalam fb comments,malayalam movie dialogues,malayalam movie comments,facebook funny malayalam movie comments,fb funny malayalam movie comments,comedy dialogues,malayalam funny pictures,Malayalam Funny Film Dialogues New Collection,fb malayalam photo comments,kuttimama,kuttymama"
+    @page_keywords    ||= "malayalam fb comments,malayalam movie dialogues,malayalam movie comments,facebook funny malayalam movie comments,fb funny malayalam comments,comedy dialogues,fb malayalam photo comments,kuttimama,kuttymama"
   end
 end
