@@ -1,6 +1,9 @@
 <% cache "v2" do%>
 	<div class="site-home">
-		<h1 class="site-home-name">കുട്ടിമാമ</h1>
+		<!-- <h1 class="site-home-name">കുട്ടിമാമ</h1> -->
+		<p class ='align-center '><%= link_to(image_tag('logo-big.png' ,:class=>'.align-center ',:style =>'width: 260px;
+'), posts_path) %></p>
+		 
 		<div class="search align-center">
 			<form action="<%= posts_path %>" >
 				<div>

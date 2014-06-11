@@ -26,5 +26,5 @@ Kuttimama::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-  HOST_URL = "http://192.168.2.85:3000"
+  HOST_URL = "http://localhost:3000"
 end

@@ -1,0 +1,62 @@
+<div class="content-area">
+  <%= render :partial => 'posts/navbar' %>
+  <div class="container">   
+    <%= render :partial => 'posts/search_bar' %>
+                      <div class="wrapper">
+                  <!-- Header -->
+                  <!-- Controlbox -->
+                  <div id="control-box">
+                    <div class="control">
+                      <button class="upload-btn" id="fetch-image" >Upload Photo</button>
+                      <span class="hidden">
+                      <input type="file" id="comment-image" accept="image/*"  >
+                      </span> </div>
+                    <div class="control">
+                      <div>
+                       <!-- <label for="comment">Comment</label>-->
+                      </div>
+                      <input type="text" id="comment" placeholder="Enter your comments">
+                    </div>
+                    <div class="control">
+                    <div class="half">
+                      <label for="size">Font Size</label>
+                      <select id="size">
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">35</option>
+                      </select>
+                  </div> <div class="half">
+                      <label for="color">Color</label>
+                      <input type="text" id="color" value="000000">
+                      </input>
+                    </div></div>
+                    <div class="control">
+                      <label>Position</label>
+                      <input class="position" type="text" id="position-x" value="177" maxlength="3">
+                      <span class="space">X</span>
+                      <input type="text" class="position" value="108" id="position-y">
+                    </div>
+                    <button class="upload" id="generate-image" >Generate</button>
+                  </div>
+                  <!-- Preview box -->
+                  <div id="preview-box">
+                    <div id="image-preview">
+                      <div id="comment-over-image" >Your Comment</div>
+                      <!-- <img id="preview" src="image/browse.png"> </div> -->
+                      <%= image_tag 'browse.png',:id=>"preview" %> </div>
+                      <div id="reply" class="success" style="display:none;"></div>
+                      <ul>
+                  <li class="down-head" id="download-box" style="display:none;"><a target="blank" id="download"><span></span><p>Download</p></a></li>
+
+                  </ul>
+                  </div>
+
+<br style="clear:both;">
+
+  </div>
+  <%= render :partial => 'posts/footer' %>
+</div>
+
+

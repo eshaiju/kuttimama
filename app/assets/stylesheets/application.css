@@ -12,4 +12,6 @@
  *= require bootstrap
  *= require style
  *= require style-home
+ *= require style-editor
+ *= require colpick
  */

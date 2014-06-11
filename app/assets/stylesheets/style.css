@@ -122,3 +122,7 @@ hr{
     .hover-blue:hover{
     	color: #22A7F0;;
     }
+
+h1, .h1 {
+font-size: 25px !important;
+}
