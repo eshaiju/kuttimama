@@ -8,8 +8,8 @@ namespace :paperclip do
 	  		begin
 	    	p path = record.image.path(style)
 	    	p FileUtils.move(path, File.join(File.dirname(path), new_file_name))
-	    	rescue e
-	    		p e.error
+	    	rescue 
+	    		
 	    	end
 	    end
 		record.image_file_name = new_file_name
