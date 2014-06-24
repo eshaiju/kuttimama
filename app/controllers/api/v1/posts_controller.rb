@@ -6,7 +6,7 @@ class Api::V1::PostsController < Api::ApiController
       @posts = Post.all
     end
     if @posts.present?
-      render :status => :ok, :json =>  @posts
+      render :status => :ok, :json =>  @posts.order("id desc")
     else
       render :status => :not_found, :json => {:message => 'Posts not found'}
     end
